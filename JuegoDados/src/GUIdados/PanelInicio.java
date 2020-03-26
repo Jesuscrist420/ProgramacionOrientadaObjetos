@@ -51,6 +51,7 @@ public class PanelInicio extends JFrame implements ActionListener{
     
     private JButton salir;
     private JButton jugar;
+    private JButton instrucciones;
     
     private JButton subir;
     private JButton bajar;
@@ -73,6 +74,15 @@ public class PanelInicio extends JFrame implements ActionListener{
         salir.setFocusable(false);
         salir.addActionListener(this);
         salir.setActionCommand("salir");
+        
+        instrucciones = new JButton(" Instrucciones ");
+        instrucciones.setBackground(Color.BLACK);
+        instrucciones.setFont(fuente);
+        instrucciones.setForeground(Color.WHITE);
+        instrucciones.setFocusable(false);
+        instrucciones.addActionListener(this);
+        instrucciones.setActionCommand("instrucciones");
+        
 
         jugar = new JButton("Jugar");
         jugar.setBackground(Color.BLACK);
@@ -128,9 +138,10 @@ public class PanelInicio extends JFrame implements ActionListener{
         
         this.getContentPane().add(salir);
         salir.setBounds( 140 , 270 , 90 , 40 );
-        
         this.getContentPane().add(jugar);
         jugar.setBounds( 40 , 270 , 90 , 40 );
+        this.getContentPane().add(instrucciones);
+        instrucciones.setBounds( 60 , 220 , 150 , 40 );
         this.getContentPane().add(subir);
         subir.setBounds( 10 , 170 , 20 , 20 );
         this.getContentPane().add(bajar);
@@ -195,6 +206,9 @@ public class PanelInicio extends JFrame implements ActionListener{
                 juego.evaluar();
             }
         }
+        if(e.getActionCommand().equals("instrucciones")){
+            Instrucciones instrucciones = new Instrucciones(this);
+        }   
         if(e.getActionCommand().equals("aumentar")){
             if(Integer.parseInt(player[3])>=10){
                 player[7] = String.valueOf(Integer.parseInt(player[7])+ 10);
