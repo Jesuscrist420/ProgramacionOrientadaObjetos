@@ -128,7 +128,6 @@ public class PanelInicio extends JFrame implements ActionListener{
         juegosJu = new JLabel(player[4]);
         juegosGa = new JLabel(player[5]);
         juegosPer = new JLabel(player[6]);
-
         apuesta = new JLabel(player[7]);
         
         this.getContentPane().setLayout(null);
